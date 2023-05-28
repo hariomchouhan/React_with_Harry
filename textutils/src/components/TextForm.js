@@ -1,39 +1,44 @@
 import React, {useState} from 'react'
 
 export default function TextForm(props) {
-    
+    // To UpperCase the text
     const handleUpClick = ()=> {
         // console.log("Upper was clicked: " + text);
         let newText = text.toUpperCase();
         setText(newText)
     }
-
+    
+    // To LowerCase the text
     const handleLoClick = ()=> {
         // console.log("Upper was clicked: " + text);
         let newText = text.toLowerCase();
         setText(newText)
     }
     
+    // To Clear the text
     const handleClearClick = ()=> {
         let newText = ('');
         setText(newText)
     }
-
+    
+    // To Replace the text to another text
     const replaceString=()=>{
         let repval=prompt("Enter the word to be replaced:")
         let todoreplaced= new RegExp(repval,'g');
-  
+        
         let tobereplace=prompt("Enter the text that you want to replace with:");
         
         let newText= text.replace(todoreplaced,tobereplace);
         setText(newText);
-      }
-
+    }
+    
+    // To Copy the clipboard text
       const handleCopy = ()=> {
         let text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
       }
+      
     const handleOnChange = (event)=> {
         // console.log("On change");
         setText(event.target.value);
