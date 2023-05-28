@@ -6,6 +6,7 @@ export default function TextForm(props) {
     // console.log("Upper was clicked: " + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to uppercase!", "success")
   };
 
   // To LowerCase the text
@@ -13,12 +14,14 @@ export default function TextForm(props) {
     // console.log("Upper was clicked: " + text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase!", "success")
   };
 
   // To Clear the text
   const handleClearClick = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("All text is clear!", "success")
   };
 
   // To Replace the text to another text
@@ -30,6 +33,7 @@ export default function TextForm(props) {
 
     let newText = text.replace(todoreplaced, tobereplace);
     setText(newText);
+    props.showAlert("Replace text!", "success")
   };
 
   // To Copy the clipboard text
@@ -37,12 +41,14 @@ export default function TextForm(props) {
     let text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copy clipboard", "success")
   };
 
 //   To Remove Extra spaces
 const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Remove Extra Spaces", "success")
 }
   const handleOnChange = (event) => {
     // console.log("On change");
