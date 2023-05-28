@@ -54,12 +54,13 @@ const handleExtraSpaces = () => {
   // setText = ("new text");// Correct way to change the state
   return (
     <>
-      <div className="container">
+      <div className={`container text-${props.mode==="light" ? "dark" : "light"}`} >
         <h1>{props.heading}</h1>
         <div className="mb-3">
           {/* TextArea */}
           <textarea
-            className="form-control"
+            className={`form-control text-${props.mode==="light" ? "dark" : "light"}`}
+            style={{backgroundColor: props.mode==="dark" ? "gray" : "white"}}
             value={text}
             onChange={handleOnChange}
             id="myBox"
@@ -90,7 +91,7 @@ const handleExtraSpaces = () => {
           Remove Extra Spaces
         </button>
       </div>
-      <div className="container my-3">
+      <div className={`container my-3 text-${props.mode==="light" ? "dark" : "light"}`}>
         {/* Summary */}
         <h2>Your text summary</h2>
         {/* Text Calculation */}
@@ -100,7 +101,7 @@ const handleExtraSpaces = () => {
         <p>{0.008 * text.split(" ").length} Minutes Read</p>
         {/* Text Preview */}
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0 ? text : "Enter something in the textbox above to preview it here"}</p>
       </div>
     </>
   );
