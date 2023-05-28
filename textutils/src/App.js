@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       {/* <Navbar title="TextUtils" aboutText="About TextUtils"/> */}
-      <Navbar title="TextUtils" mode={Mode} toggleMode={toggleMode} />
+      <Navbar title="TextUtils" mode={Mode} toggleMode={toggleMode} showAlert={showAlert} />
       {/* <Navbar /> */}
       <Alert alert={alert}/>
       <div className="container my-3">

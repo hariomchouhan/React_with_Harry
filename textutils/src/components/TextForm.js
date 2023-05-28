@@ -101,9 +101,10 @@ const handleExtraSpaces = () => {
         {/* Summary */}
         <h2>Your text summary</h2>
         {/* Text Calculation */}
-        <p>
+        <p>{text.trim() === '' ? 0 : text.match(/\S+/g).length} words and {text.replace(/\s+/g, '').length} characters</p>
+        {/* <p>
           {text.split(" ").length} words and {text.length} characters
-        </p>
+        </p> */}
         <p>{0.008 * text.split(" ").length} Minutes Read</p>
         {/* Text Preview */}
         <h2>Preview</h2>
