@@ -110,7 +110,7 @@ const handleExtraSpaces = () => {
         </p> */}
         {/* <p>{text.trim() === '' ? 0 : text.match(/\S+/g).length} words and {text.replace(/\s+/g, '').length} characters</p> */}
         <p>
-          {text.split(" ").filter((element) => {return element.length!==0}).length} words and {text.length} characters
+          {text.split(/\S+/).filter((element) => {return element.length!==0}).length} words and {text.length} characters
         </p>
 
         <p>{0.008 * text.split(" ").filter((element) => {return element.length!==0}).length} Minutes Read</p>
