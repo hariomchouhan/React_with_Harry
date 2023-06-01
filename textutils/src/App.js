@@ -24,7 +24,7 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
       showAlert("Dark mode has been enabled", "success");
-      document.title = "TextUtils - Dark Mode";
+      // document.title = "TextUtils - Dark Mode";
 
       // This code is change or toggle the mode in the title
       // setTimeout(() => {
@@ -37,7 +37,7 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "success");
-      document.title = "TextUtils - Light Mode";
+      // document.title = "TextUtils - Light Mode";
     }
   };
   return (
@@ -56,12 +56,12 @@ function App() {
             element={
               <TextForm
                 showAlert={showAlert}
-                heading="Enter the text to analyze below"
+                heading="TextUtils - Word Counter, Character Counter, Remove extra spaces"
                 mode={Mode}
               />
             }
           ></Route>
-          <Route path="/about" element={<About />}></Route>
+          <Route path="/about" element={<About  mode={Mode}/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

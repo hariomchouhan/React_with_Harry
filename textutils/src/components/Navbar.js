@@ -16,7 +16,7 @@ export default function Navbar(props) {
     props.showAlert("Background color changed to Red", "danger");
   };
   const changeSky = () => {
-    document.body.style.backgroundColor = "#1ec9be";
+    document.body.style.backgroundColor = "#0d6efd";
     props.showAlert("Background color changed to Sky", "info");
   };
   return (
@@ -55,18 +55,17 @@ export default function Navbar(props) {
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button className="btn btn-primary" type="submit">Search</button>
           </form> */}
-          <button className="btn btn-success mx-1" onClick={changeGreen}>
-            Green
-          </button>
-          <button className="btn btn-warning mx-1" onClick={changeYellow}>
-            Yellow
-          </button>
-          <button className="btn btn-danger mx-1" onClick={changeRed}>
-            Red
-          </button>
-          <button className="btn btn-info mx-1" onClick={changeSky}>
-            Sky
-          </button>
+          <div className="bg-success rounded mx-2" onClick={changeGreen} style={{height:'30px', width:'30px', cursor: 'pointer'}}>
+           
+          </div>
+          <div className="bg-warning rounded mx-2" onClick={changeYellow} style={{height:'30px', width:'30px', cursor: 'pointer'}}>
+            
+          </div>
+          <div className="bg-danger rounded mx-2" onClick={changeRed} style={{height:'30px', width:'30px', cursor: 'pointer'}}>
+            
+          </div>
+          <div className="bg-primary rounded mx-2" onClick={changeSky} style={{height:'30px', width:'30px', cursor: 'pointer'}}>
+          </div>
 
           <div
             className={`form-check form-switch text-${
