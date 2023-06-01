@@ -57,6 +57,16 @@ const handleExtraSpaces = () => {
     setText(event.target.value);
   };
 
+  // To Capitalize the first letter of the text
+  const capitalize = () => {
+    const titleCase = text.toLowerCase().split(' ')
+    .map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(' ');
+
+   setText(titleCase);
+}
   const [text, setText] = useState("");
   // text = "new text";// Wrong way to change the state
   // setText = ("new text");// Correct way to change the state
@@ -98,6 +108,9 @@ const handleExtraSpaces = () => {
         </button>
         <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>
           Remove Extra Spaces
+        </button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={capitalize}>
+        capitalize
         </button>
       </div>
       <div className={`container my-3 text-${props.mode==="light" ? "dark" : "light"}`}>
